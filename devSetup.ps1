@@ -1,13 +1,13 @@
 # URLs and Paths for developer tool downloads 
 $vscURL = "https://go.microsoft.com/fwlink/?Linkid=852157"
 $vscPath = "$env:USERPROFILE\Downloads\vscode.exe"
-$gitURL = "https://desktop.githubusercontent.com/releases/2.9.4-1eb890f4/GitHubDesktopSetup.exe"
+$gitURL = "https://desktop.githubusercontent.com/github-desktop/releases/3.1.8-2ada979c/GitHubDesktopSetup-x64.exe"
 $gitPath = "$env:USERPROFILE\Downloads\GitHub Desktop Setup.exe"
-$pyURL = "https://www.python.org/ftp/python/3.10.2/python-3.10.2-amd64.exe"
+$pyURL = "https://www.python.org/ftp/python/3.11.2/python-3.11.2-amd64.exe"
 $pyPath = "$env:USERPROFILE\Downloads\python-3.10.2-amd64.exe"
-$nodeURL = "https://nodejs.org/dist/v16.14.0/node-v16.14.0-x64.msi"
+$nodeURL = "https://nodejs.org/dist/v18.14.2/node-v18.14.2-x64.msi"
 $nodePath = "$env:USERPROFILE\Downloads\node-v16.14.0-x64.msi"
-$dockURL = "https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe"
+$dockURL = "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module"
 $dockPath = "$env:USERPROFILE\Downloads\Docker Desktop Installer.exe"
 
 # Turn on Developer Mode
