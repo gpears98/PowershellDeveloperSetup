@@ -4,9 +4,9 @@ $vscPath = "$env:USERPROFILE\Downloads\vscode.exe"
 $gitURL = "https://desktop.githubusercontent.com/github-desktop/releases/3.1.8-2ada979c/GitHubDesktopSetup-x64.exe"
 $gitPath = "$env:USERPROFILE\Downloads\GitHub Desktop Setup.exe"
 $pyURL = "https://www.python.org/ftp/python/3.11.2/python-3.11.2-amd64.exe"
-$pyPath = "$env:USERPROFILE\Downloads\python-3.10.2-amd64.exe"
+$pyPath = "$env:USERPROFILE\Downloads\python-3.11.2-amd64.exe"
 $nodeURL = "https://nodejs.org/dist/v18.14.2/node-v18.14.2-x64.msi"
-$nodePath = "$env:USERPROFILE\Downloads\node-v16.14.0-x64.msi"
+$nodePath = "$env:USERPROFILE\Downloads\node-v18.14.2-x64.msi"
 $dockURL = "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module"
 $dockPath = "$env:USERPROFILE\Downloads\Docker Desktop Installer.exe"
 
@@ -23,7 +23,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 Invoke-WebRequest -Uri $vscURL -OutFile $vscPath
 
 # Download GitHub
-Invoke-WebRequest -Uri $gitURL -Outfile $gitPath
+Invoke-WebRequest -Uri $gitURL -OutFile $gitPath
 
 # Download Python
 Invoke-WebRequest -Uri $pyURL -OutFile $pyPath
@@ -55,11 +55,11 @@ $vscShortcut.TargetPath = "C:\Program Files\Microsoft VS Code\Code.exe"
 $vscShortcut.Save()
 
 # Create a shortcut for Docker
-$dockShortcut = New-Object -ComObject WScript.Shell.CreateShortcut("$env:USERPROFILE\Desktop\Docker.lnk")
-$dockShortcut.TargetPath = $dockerExe
+$dockShortcut = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\Desktop\Docker.lnk")
+$dockShortcut.TargetPath = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 $dockShortcut.Save()
 
 # Create a shortcut for GitHub
-$gitShortcut = New-Object -ComObject WScript.Shell.CreateShortcut("$env:USERPROFILE\Desktop\GitHub.lnk")
-$gitShortcut.TargetPath = $githubExe
+$githubExe = "$env:USERPROFILE\AppData\Local\GitHubDesktop\app-2.8.2\GitHubDesktop.exe"
+$gitShortcut = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\Desktop\GitHub.lnk")
 $gitShortcut.Save()
