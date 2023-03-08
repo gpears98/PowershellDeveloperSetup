@@ -50,16 +50,20 @@ Start-Process -FilePath $nodePath -ArgumentList '/qn', '/norestart' -Wait
 Start-Process -FilePath $gitPath -ArgumentList '/VERYSILENT' -Wait
 
 # Create a shortcut for VScode
-$vscShortcut = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\Desktop\Visual Studio Code.lnk")
+$vscShell = New-Object -comObject WScript.Shell
+$vscShortcut = $vscShell.CreateShortcut("$Home\Desktop\Visual Studio Code.lnk")
 $vscShortcut.TargetPath = "C:\Program Files\Microsoft VS Code\Code.exe"
 $vscShortcut.Save()
 
 # Create a shortcut for Docker
-$dockShortcut = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\Desktop\Docker.lnk")
+$dockShell = New-Object -comObject WScript.Shell
+$dockShortcut = $dockShell.CreateShortcut("$Home\Desktop\Docker.lnk")
 $dockShortcut.TargetPath = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 $dockShortcut.Save()
 
 # Create a shortcut for GitHub
-$githubExe = "$env:USERPROFILE\AppData\Local\GitHubDesktop\app-2.8.2\GitHubDesktop.exe"
-$gitShortcut = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\Desktop\GitHub.lnk")
+$gitShell = New-Object -comObject WScript.Shell
+$gitShortcut = $gitShell.CreateShortcut("$Home\Desktop\GitHub.lnk")
+$gitShortcut.TargetPath = "$env:USERPROFILE\AppData\Local\GitHubDesktop\app-2.8.2\GitHubDesktop.exe"
 $gitShortcut.Save()
+
